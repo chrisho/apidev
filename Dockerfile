@@ -39,3 +39,8 @@ RUN go get github.com/SebastiaanKlippert/go-wkhtmltopdf
 
 # Timezone
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+# Chinese fonts
+RUN wget http://www.mycode.net.cn/wp-content/uploads/2015/07/YaHeiConsolas.tar.gz
+RUN tar -zxvf YaHeiConsolas.tar.gz && cp ./YaHeiConsolas.ttf /usr/share/fonts/truetype/dejavu \
+    && chmod 644 /usr/share/fonts/truetype/dejavu/YaHeiConsolas.ttf
