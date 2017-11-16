@@ -19,6 +19,14 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN apt-get install -y git
 
+# Timezone
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+# Chinese fonts
+RUN wget http://www.mycode.net.cn/wp-content/uploads/2015/07/YaHeiConsolas.tar.gz
+RUN tar -zxvf YaHeiConsolas.tar.gz && cp ./YaHeiConsolas.ttf /usr/share/fonts/truetype/dejavu \
+    && chmod 644 /usr/share/fonts/truetype/dejavu/YaHeiConsolas.ttf
+
 # Download go package
 RUN go get github.com/chrisho/mosquito
 RUN go get github.com/samuel/go-zookeeper/zk
@@ -36,11 +44,4 @@ RUN go get github.com/tommy351/gin-csrf
 RUN go get github.com/tommy351/gin-sessions
 RUN go get github.com/google/uuid
 RUN go get github.com/SebastiaanKlippert/go-wkhtmltopdf
-
-# Timezone
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
-# Chinese fonts
-RUN wget http://www.mycode.net.cn/wp-content/uploads/2015/07/YaHeiConsolas.tar.gz
-RUN tar -zxvf YaHeiConsolas.tar.gz && cp ./YaHeiConsolas.ttf /usr/share/fonts/truetype/dejavu \
-    && chmod 644 /usr/share/fonts/truetype/dejavu/YaHeiConsolas.ttf
+RUN go get github.com/xuri/excelize
