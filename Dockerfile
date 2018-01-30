@@ -45,3 +45,4 @@ RUN go get github.com/tommy351/gin-sessions
 RUN go get github.com/google/uuid
 RUN go get github.com/SebastiaanKlippert/go-wkhtmltopdf
 RUN go get github.com/xuri/excelize
+RUN go get github.com/aliyun/aliyun-oss-go-sdk/oss
