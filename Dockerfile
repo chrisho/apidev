@@ -27,8 +27,18 @@ RUN wget http://www.mycode.net.cn/wp-content/uploads/2015/07/YaHeiConsolas.tar.g
 RUN tar -zxvf YaHeiConsolas.tar.gz && cp ./YaHeiConsolas.ttf /usr/share/fonts/truetype/dejavu \
     && chmod 644 /usr/share/fonts/truetype/dejavu/YaHeiConsolas.ttf
 
+# 安装微框架
+RUN go get github.com/aliyun/aliyun-log-go-sdk
+RUN go get github.com/asaskevich/govalidator
+RUN go get github.com/sirupsen/logrus
+RUN go get github.com/rs/xid
+RUN go get golang.org/x/net/context
+RUN go get google.golang.org/grpc
+RUN go get github.com/joho/godotenv
+RUN mkdir -p /go/src/github.com/chrisho/mosquito && \
+    git clone -b k8s https://github.com/chrisho/mosquito.git /go/src/github.com/chrisho/mosquito
+
 # Download go package
-RUN go get github.com/chrisho/mosquito
 RUN go get github.com/samuel/go-zookeeper/zk
 RUN go get github.com/sirupsen/logrus
 RUN go get github.com/go-redis/redis
