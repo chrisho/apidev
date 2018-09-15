@@ -11,7 +11,7 @@ RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.2.1/w
 RUN gdebi --n wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
 RUN wget https://storage.googleapis.com/golang/go1.8.4.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.8.4.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
 RUN export PATH=$PATH:/usr/local/go/bin 
 
 ENV GOPATH /go
