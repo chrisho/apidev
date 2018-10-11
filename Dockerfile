@@ -57,3 +57,4 @@ RUN go get github.com/SebastiaanKlippert/go-wkhtmltopdf
 RUN go get github.com/xuri/excelize
 RUN go get github.com/aliyun/aliyun-oss-go-sdk/oss
 RUN go get github.com/chrisho/sd-grpc-paginate
+RUN go get github.com/chrisho/sd-helper
