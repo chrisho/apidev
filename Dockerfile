@@ -10,8 +10,8 @@ RUN apt-get install -y build-essential xorg libssl-dev libxrender-dev wget gdebi
 RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 RUN gdebi --n wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
-RUN wget https://storage.googleapis.com/golang/go1.10.3.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
+RUN wget https://storage.googleapis.com/golang/go1.11.2.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.11.2.linux-amd64.tar.gz
 RUN export PATH=$PATH:/usr/local/go/bin 
 
 ENV GOPATH /go
